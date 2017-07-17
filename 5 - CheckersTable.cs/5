@@ -1,0 +1,41 @@
+using System;
+
+namespace CheckersTable
+{
+    /// <summary>
+    ///  Dama tahtası kodlaması.
+    /// </summary>
+    
+    class Program
+    {
+        // Girilen sayinin tek olup olmadigini soyleyen fonksiyon.
+        static bool odd(int num)
+        {
+            if (num % 2 == 0)
+                return false;
+            return true;
+        }
+
+        // Dama tahtasi yapip ekrana bastiran fonksiyon.
+        static void checkers()
+        {
+            int[,] matrix = new int[4, 5];
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    if (odd(i + j))
+                        matrix[i, j] = 1;
+                    Console.Write(matrix[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            checkers();
+        }
+    }     
+}   
